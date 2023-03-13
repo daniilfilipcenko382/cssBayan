@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 10px;
+:root {
+    font-size: 8px;
     color: aqua;
 }
 
@@ -35,7 +35,7 @@ body {
 .accordion:hover .accordion_title:after {
     content: "";       
     border-style: solid;
-    border-width: 8px 5px 0 5px;
+    border-width: 0.8rem 0.5rem 0 0.5rem;
     border-color: aqua transparent transparent transparent;
     position: absolute;
     top: 50%;   
@@ -50,11 +50,12 @@ body {
 
 
 .accordion_title {
-    min-width: 50rem;    
+    min-width: 33rem;    
     font-size: 3rem;        
     cursor: pointer;
     display: block;
-    position: relative;       
+    position: relative;
+    transition: 0.5s;       
 }
 
 
@@ -64,7 +65,7 @@ body {
 
 .accordion_input:hover ~ .accordion_title:after {    
     border-style: solid;
-    border-width: 0 5px 8px 5px;
+    border-width: 0 0.5rem 0.8rem 0.5rem;
     border-color: transparent transparent aliceblue transparent;
     transition: 0,5s;     
 }
@@ -80,15 +81,13 @@ body {
     transition: 1s;     
 }
 
-
-
 .accordion_input:checked ~ .accordion_title {
     color:aliceblue
 }
 
 .accordion_input:checked ~ .accordion_title:after {    
     border-style: solid;
-    border-width: 0 5px 8px 5px;
+    border-width: 0 0.5rem 0.8rem 0.5rem;
     border-color: transparent transparent aliceblue transparent;
 }
 
@@ -117,7 +116,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
     position: absolute;
- }
+}
 
 .accordion_content {
     display: inline-block;
@@ -129,9 +128,23 @@ body {
 }
 
 .accordion_content img {    
-    min-width: 30rem;
+    min-width: 30rem;  
+}
+
+@media screen and (min-width: 820px){
+    :root {
+        font-size: 10px;
+    }   
 }
 
 
-
-
+@media screen and (min-width: 1920px){
+    :root {
+        font-size: 12px;
+    }
+    
+    .accordion_title {
+        min-width: 50rem;              
+    }
+    
+}
