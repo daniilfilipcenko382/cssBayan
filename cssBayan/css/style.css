@@ -13,6 +13,10 @@ h1 {
     font-size: 4rem;
 }
 
+h2 {
+    font-size: 3rem;
+}
+
 body {
     background-color: black;
     font-family: Arial, Helvetica, sans-serif;   
@@ -31,22 +35,11 @@ body {
     flex-direction: column;    
 }
 
-
-.accordion:hover .accordion_title:after {
-    content: "";       
-    border-style: solid;
-    border-width: 0.8rem 0.5rem 0 0.5rem;
-    border-color: aqua transparent transparent transparent;
-    position: absolute;
-    top: 50%;   
-    right: 1.5rem;
-    transform: translateY(-50%);   
-}
-
 .accordion_item {
     border-top:0.1rem solid grey;
-    cursor: pointer;    
+    cursor: pointer;        
 }
+
 
 
 .accordion_title {
@@ -58,40 +51,24 @@ body {
     transition: 0.5s;       
 }
 
-
-.accordion_input:hover ~ .accordion_title {
-    color:aliceblue;    
-}
-
-.accordion_input:hover ~ .accordion_title:after {    
-    border-style: solid;
-    border-width: 0 0.5rem 0.8rem 0.5rem;
-    border-color: transparent transparent aliceblue transparent;
-    transition: 0,5s;     
-}
-
-.accordion_input:hover ~ .accordion_content {    
+.title {
     display: flex;
     align-items:center;
-    justify-content:center;
-    padding: 1rem 0 2rem 0; 
-    visibility: visible;
-    width: 33rem;
-    height: 19rem;
-    transition: 1s;     
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.accordion_input:checked ~ .accordion_title {
-    color:aliceblue
+.accordion_item .triangle {   
+    width: 3rem; 
 }
 
-.accordion_input:checked ~ .accordion_title:after {    
-    border-style: solid;
-    border-width: 0 0.5rem 0.8rem 0.5rem;
-    border-color: transparent transparent aliceblue transparent;
+
+
+.accordion_input:checked ~ .accordion_title .triangle {    
+    transform: rotate(180deg)
 }
 
-.accordion_input:checked ~ .accordion_content {    
+.accordion_input:checked ~ .accordion_title .accordion_content {    
     display: flex;
     align-items:center;
     justify-content:center;
@@ -118,10 +95,8 @@ body {
     position: absolute;
 }
 
-.accordion_content {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 1rem 0 2rem 0;
+.accordion_content {    
+    margin: 0 auto;    
     overflow: hidden;
     width: 0;
     height: 0;        
@@ -146,5 +121,30 @@ body {
     .accordion_title {
         min-width: 50rem;              
     }
+    
+    .accordion_item .triangle {
+        visibility: hidden;
+        width: 3rem; 
+    }
+
+    .accordion:hover .accordion_item .triangle {
+        visibility: visible;    
+    }
+    
+    .accordion_input:hover ~ .accordion_title .triangle {    
+        transform: rotate(180deg)  
+    }
+    
+    .accordion_input:hover ~ .accordion_title .accordion_content {    
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        padding: 1rem 0 2rem 0; 
+        visibility: visible;
+        width: 33rem;
+        height: 19rem;
+        transition: 1s;     
+    }   
+      
     
 }
