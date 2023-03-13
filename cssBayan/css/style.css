@@ -46,9 +46,8 @@ body {
     min-width: 33rem;    
     font-size: 3rem;        
     cursor: pointer;
-    display: block;
-    position: relative;
-    transition: 0.5s;       
+    display: block;    
+    transition: all 0.5s ease 0s;        
 }
 
 .title {
@@ -92,14 +91,15 @@ body {
     height: 0;
     -webkit-appearance: none;
     appearance: none;
-    position: absolute;
+    display: none; 
 }
 
 .accordion_content {    
     margin: 0 auto;    
     overflow: hidden;
     width: 0;
-    height: 0;        
+    height: 0;
+    transition: all 0.5s ease 0s; 
 }
 
 .accordion_content img {    
