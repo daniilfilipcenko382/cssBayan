@@ -76,6 +76,24 @@ body {
     transition: 0.2;
 }
 
+.accordion_input:checked ~ .accordion_title {
+    color:aliceblue
+}
+
+.accordion_input:checked ~ .accordion_title:after {    
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent aliceblue transparent;
+}
+
+.accordion_input:checked ~ .accordion_content {    
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    padding: 1rem 0 2rem 0;
+    transition: 0.2;
+}
+
 .accordion_body {    
     display: flex;    
     justify-content: center;
