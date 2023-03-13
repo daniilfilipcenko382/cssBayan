@@ -41,8 +41,6 @@ body {
     padding: 1rem 0 1rem 0;        
 }
 
-
-
 .accordion_title {
     min-width: 33rem;    
     font-size: 3rem;        
@@ -59,9 +57,13 @@ body {
 }
 
 .accordion_item .triangle {   
-    width: 3rem; 
+    width: 3rem;
 }
 
+.accordion_input:checked ~ .accordion_title .title {
+    color:aliceblue;    
+    transition: all 0.5s ease 0s;
+}
 
 
 .accordion_input:checked ~ .accordion_title .triangle {    
@@ -131,6 +133,11 @@ body {
     .accordion:hover .accordion_item .triangle {
         visibility: visible;    
     }
+
+    .accordion_input:hover ~ .accordion_title .title {
+        color:aliceblue;    
+        transition: all 0.5s ease 0s;
+    }
     
     .accordion_input:hover ~ .accordion_title .triangle {    
         transform: rotate(180deg)  
@@ -145,5 +152,5 @@ body {
         height: 17rem;
         transition: 1s;
         transition: all 0.5s ease 0s;              
-    }    
+    }   
 }
