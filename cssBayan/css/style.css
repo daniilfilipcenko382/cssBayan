@@ -31,6 +31,7 @@ body {
     flex-direction: column;    
 }
 
+
 .accordion:hover .accordion_title:after {
     content: "";       
     border-style: solid;
@@ -44,7 +45,7 @@ body {
 
 .accordion_item {
     border-top:0.1rem solid grey;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 
@@ -53,28 +54,33 @@ body {
     font-size: 3rem;        
     cursor: pointer;
     display: block;
-    position: relative;
-        
+    position: relative;       
 }
 
 
 .accordion_input:hover ~ .accordion_title {
-    color:aliceblue
+    color:aliceblue;    
 }
 
 .accordion_input:hover ~ .accordion_title:after {    
     border-style: solid;
     border-width: 0 5px 8px 5px;
     border-color: transparent transparent aliceblue transparent;
+    transition: 0,5s;     
 }
 
 .accordion_input:hover ~ .accordion_content {    
     display: flex;
     align-items:center;
     justify-content:center;
-    padding: 1rem 0 2rem 0;
-    transition: 0.2;
+    padding: 1rem 0 2rem 0; 
+    visibility: visible;
+    width: 33rem;
+    height: 19rem;
+    transition: 1s;     
 }
+
+
 
 .accordion_input:checked ~ .accordion_title {
     color:aliceblue
@@ -91,7 +97,10 @@ body {
     align-items:center;
     justify-content:center;
     padding: 1rem 0 2rem 0;
-    transition: 0.2;
+    visibility: visible;
+    width: 33rem;
+    height: 19rem;
+    transition: 1s;          
 }
 
 .accordion_body {    
@@ -108,16 +117,21 @@ body {
     -webkit-appearance: none;
     appearance: none;
     position: absolute;
-}
+ }
 
 .accordion_content {
-    display: none;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 1rem 0 2rem 0;
+    overflow: hidden;
+    width: 0;
+    height: 0;        
 }
 
-.accordion_content img{
-    border:0.1rem solid cornflowerblue;
+.accordion_content img {    
     min-width: 30rem;
 }
+
 
 
 
